@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Facts extends Model
 {
     use HasFactory;
+
+    protected $fillable= ['type','deleted','text','used','verified','count'];
+
 }

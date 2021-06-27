@@ -19,6 +19,8 @@ class CreateFactsTable extends Migration
             $table->boolean('deleted');
             $table->text('text');
             $table->boolean('used');
+            $table->boolean('verified');
+            $table->integer('count');
             $table->timestamps();
         });
     }
