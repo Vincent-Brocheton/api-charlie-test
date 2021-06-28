@@ -17,3 +17,4 @@ Ensuite utilisez la commande
 
 ``php artisan serve``
 
+##Partie Vue JS
