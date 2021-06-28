@@ -18,3 +18,21 @@ Ensuite utilisez la commande
 ``php artisan serve``
 
 ##Partie Vue JS
+Effectuer un npm run serve
+
+##Ressenti sur le projet
+
+Très interessant, m'as permis de découvrir plus profondément Vue.JS avec les appels API
+que j'avais déjà fait en React mais pas encore avec Vue. Cependant cela reste très similaire.
+
+Le temps de développement du projet est très adapté en éspérant que celui ci corresponde a vos attentes.
+
+
+
+## Temps mis à réaliser le projet
+Etant en semaine de projet dans mon centre de formation je n'ai pu me concentrer
+sur le projet que les soirs.
+
+Back-end : 4h
+
+Front-end : ...h
