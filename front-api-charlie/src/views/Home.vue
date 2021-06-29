@@ -1,10 +1,14 @@
 <template>
   <div>
     <div class="display">
-      <div v-for="facts in fact" :key="facts.id">
-        <router-link :to="{ name: 'SelectedFact', params: { id: facts.id } }">
-          {{ facts.id }}
-        </router-link>
+      <div class="col-3 m-2 shadow" v-for="facts in fact" :key="facts.id">
+        <div >
+          <router-link :to="{ name: 'SelectedFact', params: { id: facts.id } }">
+          <b-card bg-variant="secondary" text-variant="white" :header="facts.type" class="text-center">
+            <b-card-text>{{facts.text}}</b-card-text>
+          </b-card>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -28,16 +32,11 @@ export default {
 };
 </script>
 <style>
+
 .display {
-  background-color: rgba(179, 172, 167, 0.08);
   display: flex;
   justify-content: space-around;
-}
-.display div {
-  width: 30%;
-  text-align: center;
-  margin-left: 1em;
-  margin-right: 1em;
+  flex-wrap: wrap;
 }
 a{
   text-decoration: none;

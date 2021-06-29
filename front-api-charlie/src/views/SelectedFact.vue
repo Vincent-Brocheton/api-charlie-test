@@ -1,10 +1,34 @@
 <template>
   <div>
-    <small>{{ fact.type }}</small>
+    <b-card class="text-center" bg-variant="secondary" text-variant="white" :title="fact.type">
+      <b-card-text >
+        {{fact.text}}
+      </b-card-text>
+
     <div id="buttons">
       <router-link :to="{ name: 'FormFact' }">Modifier la fact</router-link>
-      <button @click="del">Supprimer la fact</button>
+
+      <div>
+        <b-button v-b-modal.modal-1>Supprimer la fact</b-button>
+      </div>
     </div>
+        </b-card>
+        <b-modal id="modal-1" title="Supprimer une fact" hide-footer>
+          <template #modal-header="{ close }">
+            <!-- Emulate built in modal header close button action -->
+            <b-button size="sm" variant="outline-danger" @click="close()">
+              Close Modal
+            </b-button>
+            <h5>Supprimer une fact</h5>
+          </template>
+          <p class="my-4">Souhaitez vous rééllement supprimer cette fact ?</p>
+          <div id="modal-button">
+          <b-button variant="success" class="col-5" @click="$bvModal.hide('modal-1')"> Non </b-button>
+          <b-button variant="danger" class="col-5" @click="del"> Oui </b-button>
+          </div>
+        </b-modal>
+
+
   </div>
 </template>
 
@@ -38,8 +62,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#modal-button{
+  display: flex;
+  justify-content: space-around;
+}
+
 #buttons a,
 #buttons button {
+  color: black;
   padding: 16px 10px 10px 10px;
   margin-top: 20px;
   font-size: 1.1em;

@@ -6,11 +6,12 @@
         <li><router-link :to="{ name: 'NewFormFact'}">Créer une nouvelle fact</router-link></li>
       </ul>
     </nav>
-    <router-view />
+    <router-view class="container" />
   </div>
 </template>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

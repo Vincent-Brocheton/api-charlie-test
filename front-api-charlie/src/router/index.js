@@ -22,21 +22,21 @@ const routes = [
       )
   },
   {
-    path: "/:id/edit",
-    name: "FormFact",
-    component: () =>
-        import(
-            /* webpackChunkName : "SelectedFact" */ "../views/FormFact.vue"
-            ),
-  },
-  {
     path: "/new",
     name: "NewFormFact",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName : "SelectedFact" */ "../views/FormFact.vue"),
+        import(/* webpackChunkName : "NewFormFact" */ "../views/NewFormFact.vue"),
+  },
+  {
+    path: "/:id/edit",
+    name: "FormFact",
+    component: () =>
+        import(
+            /* webpackChunkName : "FormFact" */ "../views/FormFact.vue"
+            ),
   },
 ];
 

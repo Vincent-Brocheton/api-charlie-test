@@ -2,29 +2,29 @@
     <div class="form">
         <div class="form-container">
             <form id="reused_form" @submit="submitForm">
-                    <b-row class="mt-2">
-                        <b-col sm="2">
-                            <label>Animal : </label>
-                        </b-col>
-                        <b-col sm="10">
-                            <b-form-select v-model="fact.type" :options="options"></b-form-select>
-                        </b-col>
-                    </b-row>
-                    <b-row class="mt-5">
-                        <b-col sm="2">
-                            <label for="textarea">Fact :</label>
-                        </b-col>
-                        <b-col sm="10">
-                            <b-form-textarea
-                                    id="textarea"
-                                    v-model="fact.text"
-                                    placeholder="Tapez le texte de votre histoire !"
-                            ></b-form-textarea>
-                        </b-col>
-                    </b-row>
-                  <b-col sm="10" offset="2" class="mt-4">
+                <b-row class="mt-2">
+                    <b-col sm="2">
+                        <label>Animal : </label>
+                    </b-col>
+                    <b-col sm="10">
+                        <b-form-select v-model="fact.type" :options="options"></b-form-select>
+                    </b-col>
+                </b-row>
+                <b-row class="mt-5">
+                    <b-col sm="2">
+                        <label for="textarea">Fact :</label>
+                    </b-col>
+                    <b-col sm="10">
+                        <b-form-textarea
+                                id="textarea"
+                                v-model="fact.text"
+                                placeholder="Tapez le texte de votre histoire !"
+                        ></b-form-textarea>
+                    </b-col>
+                </b-row>
+                <b-col sm="10" offset="2" class="mt-4">
                     <b-button type="submit">Valider</b-button>
-                  </b-col>
+                </b-col>
             </form>
         </div>
     </div>
@@ -34,14 +34,13 @@
     import axios from "axios";
 
     export default {
-        name: "FormFact",
+        name: "NewFormFact",
         data() {
             return {
                 options: [
                     {value: "cats", text: "Chats"},
                     {value: "dogs", text: "Chien"}
                 ],
-                factId: this.$route.params.id,
                 fact: {
                     id: 0,
                     type: "",
@@ -49,24 +48,12 @@
                 },
             };
         },
-        mounted() {
-            axios
-                .get("http://127.0.0.1:8000/api/facts/" + this.factId)
-                .then((response) => {
-                    this.fact = response.data;
-                });
-
-        },
         methods: {
             submitForm: async function (e) {
+                console.log(this.fact);
                 e.preventDefault();
-                if (this.fact.text != "") {
-                    await axios.put(
-                        "http://127.0.0.1:8000/api/facts/" + this.factId,
-                        this.fact
-                    );
-                    this.$router.push("/");
-                }
+                await axios.post("http://127.0.0.1:8000/api/facts/", this.fact);
+                this.$router.push("/");
             },
         },
     };

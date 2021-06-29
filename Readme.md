@@ -4,6 +4,9 @@ Voici une application créer avec Laravel 8 et Vue.JS, je vais vous décrire par
 comment lancer le projet.
 
 ## La base de données
+/!\ PENSEZ BIEN A ETRE DANS LE DOSSIER "back-api-charlie" pour les étapes jusqu'a la fin de 
+'lancer l'API'
+
 Tout d'abord pour la partie Back-end de l'application placez vous bien dans le dossier back-api-charlie
 
 
@@ -14,18 +17,27 @@ Ensuite utilisez la commande
 ```php artisan migrate``` afin de créer les tables dans votre Database.
 
 ## Lancer l'API
+Lancer la commande ``composer install``
 
-``php artisan serve``
+Puis la commande
+``php artisan serve`` afin de lancer le serveur
 
 ##Partie Vue JS
-Effectuer un npm run serve
+/!\ PENSEZ BIEN A ETRE DANS LE DOSSIER "front-api-charlie"
+
+Lancer la commande ``npm install`` pour installer tout ce dont il y a besoin
+
+Effectuer un ``npm run serve`` afin de lancer le serveur Vue.js
+
+
 
 ##Ressenti sur le projet
 
 Très interessant, m'as permis de découvrir plus profondément Vue.JS avec les appels API
 que j'avais déjà fait en React mais pas encore avec Vue. Cependant cela reste très similaire.
 
-Le temps de développement du projet est très adapté en éspérant que celui ci corresponde a vos attentes.
+Le temps de développement du projet est très adapté en éspérant que celui ci 
+corresponde à vos attentes.
 
 
 
@@ -33,6 +45,4 @@ Le temps de développement du projet est très adapté en éspérant que celui c
 Etant en semaine de projet dans mon centre de formation je n'ai pu me concentrer
 sur le projet que les soirs.
 
-Back-end : 4h
-
-Front-end : ...h
+Projet développé en 3 jours.
