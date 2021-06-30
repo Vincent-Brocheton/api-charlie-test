@@ -4,6 +4,10 @@ Voici une application créer avec Laravel 8 et Vue.JS, je vais vous décrire par
 comment lancer le projet.
 
 ## La base de données
+Commençons tout d'abord par récupérer tout ce qu'il nous faut :
+
+Lancer la commande ``composer install``
+
 /!\ PENSEZ BIEN A ETRE DANS LE DOSSIER "back-api-charlie" pour les étapes jusqu'a la fin de 
 'lancer l'API'
 
@@ -14,12 +18,11 @@ N'oubliez pas de créer une table et de modifier le fichier .env dans le back-en
 afin de pouvoir vous connecter a une base de donnée.
 
 Ensuite utilisez la commande 
-```php artisan migrate``` afin de créer les tables dans votre Database.
+```php artisan migrate --seed``` afin de créer les tables dans votre Database et de la garnir de données.
 
 ## Lancer l'API
-Lancer la commande ``composer install``
 
-Puis la commande
+Lancez la commande
 ``php artisan serve`` afin de lancer le serveur
 
 ##Partie Vue JS

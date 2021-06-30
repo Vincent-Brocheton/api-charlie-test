@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Facts;
 use Illuminate\Database\Seeder;
 
 class FactsSeed extends Seeder
@@ -13,6 +14,6 @@ class FactsSeed extends Seeder
      */
     public function run()
     {
-        //
+        Facts::factory()->count(6)->create();
     }
 }

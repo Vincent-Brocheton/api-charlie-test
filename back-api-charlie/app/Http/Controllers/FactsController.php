@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Facts;
-use App\Http\Resources\Facts as ResourcesFacts;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
